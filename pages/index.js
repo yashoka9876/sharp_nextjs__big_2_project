@@ -1,6 +1,7 @@
 import React from 'react'
 import MeetupList from '../components/meetups/MeetupList'
 import { MongoClient } from 'mongodb'
+import Head from 'next/head'
 const DUMMY_LIST=[
     {
         id:'m1',
@@ -20,6 +21,12 @@ const DUMMY_LIST=[
 const HomePage = (props) => {
   return (
     <>
+    <Head>
+          <title>React Meetup</title>
+        </Head>
+        <meta name='description'
+        content='Browse a huge list of highly active React meetups!'
+        />
     <MeetupList meetups={props.meetups}/>
     </>
   )

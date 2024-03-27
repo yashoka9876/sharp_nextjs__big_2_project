@@ -2,11 +2,18 @@ import React from 'react'
 import Card from '../../components/ui/Card'
 import MeetupDetail from '../../components/meetups/MeetupDetail'
 import { MongoClient, ObjectId } from 'mongodb'
+import Head from 'next/head'
 
 const DetailPage = (props) => {
   console.log(props.meetupData.id)
   return (
     <>
+    <Head>
+          <title>{props.meetupData.title}</title>
+        </Head>
+        <meta name='description'
+        content={props.meetupData.description}
+        />
       <MeetupDetail
       image={props.meetupData.image}
       title={props.meetupData.titlte}
